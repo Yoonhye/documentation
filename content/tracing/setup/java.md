@@ -136,6 +136,7 @@ Datastore tracing provides:
 | MongoDB         | 3.0+           |
 | Cassandra       | 3.2+           |
 | Jedis           | 1.4+           |
+| Lettuce         | 5.0+           |
 
 `dd-java-agent` is also compatible with common JDBC drivers including:
 
@@ -173,7 +174,6 @@ Don't see your desired framework? We're continually adding additional support, [
 | HttpURLConnection              | all      | `-Ddd.integration.httpurlconnection.enabled=true`                             |
 | JSP Rendering                  | 2.3+     | `-Ddd.integration.jsp.enabled=true`                                           |
 | Akka-Http Server               | 10.0+    | `-Ddd.integration.akka-http.enabled=true`                                     |
-| Lettuce                        | 5.0+     | `-Ddd.integration.lettuce.enabled=true`                                       |
 | SpyMemcached                   | 2.12+    | `-Ddd.integration.spymemcached.enabled=true`                                  |
 | Ratpack                        | 1.4+     | `-Ddd.integration.ratpack.enabled=true`                                       |
 | Spark Java                     | 2.4+     | `-Ddd.integration.sparkjava.enabled=true -Ddd.integration.jetty.enabled=true` |
