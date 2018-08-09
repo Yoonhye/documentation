@@ -63,7 +63,7 @@ collect_static_assets() {
         --include "*.css" \
         --include "*.js" \
         "${ARTIFACT_RESOURCE}/" \
-        s3://$(get_secret 'static_bucket')/documentation/ || (echo "failed to collect static to s3://$(get_secret 'static_bucket')/" && fail_step "${FUNCNAME}")
+        s3://$(get_secret 'static_bucket')/documentation/
     echo "Done collecting static."
     pass_step  "${FUNCNAME}"
 }
