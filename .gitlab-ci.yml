@@ -41,7 +41,7 @@ build_preview:
     - version_static_assets
 #    - sync_integration_descriptions
 #    - placehold_translations
-#    - build_hugo_site
+    - build_hugo_site
 #    - build_hugo_site_ja
 #    - minify_html
     - collect_static_assets
