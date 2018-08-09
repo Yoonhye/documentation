@@ -47,6 +47,7 @@ collect_static_assets() {
     echo "Collecting static assets to s3://$(get_secret 'static_bucket')/documentation/ from ${ARTIFACT_RESOURCE}/"
     aws s3 sync \
         --acl "public-read" \
+        --debug \
         --cache-control "public, max-age=31536000, immutable" \
         --exclude "*" \
         --include "*.eot" \
