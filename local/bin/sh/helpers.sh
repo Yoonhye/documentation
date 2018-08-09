@@ -45,7 +45,7 @@ collect_static_assets() {
     start_step
     echo "---------"
     echo "Collecting static assets to s3://$(get_secret 'static_bucket')/documentation/ from ${ARTIFACT_RESOURCE}/"
-    aws s3 sync \
+    aws s3 cp \
         --acl "public-read" \
         --cache-control "public, max-age=31536000, immutable" \
         --exclude "*" \
@@ -62,8 +62,10 @@ collect_static_assets() {
         --include "*.ico" \
         --include "*.css" \
         --include "*.js" \
+        --quiet \
+        --recursive \
         "${ARTIFACT_RESOURCE}/" \
-        s3://$(get_secret 'static_bucket')/documentation/
+        s3://$(get_secret 'static_bucket')/documentation/ || (echo "failed to collect static to s3://$(get_secret 'static_bucket')/" && fail_step "${FUNCNAME}")
     echo "Done collecting static."
     pass_step  "${FUNCNAME}"
 }
