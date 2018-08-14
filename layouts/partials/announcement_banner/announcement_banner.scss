@@ -11,6 +11,25 @@
 .announcement_banner {
   display: none;
 }
+.announcement_banner.open.announce-html {
+  color: #fff;
+  font-size: 20px;
+  div{
+    transform: translateY(-2px);
+  }
+  a{
+    display:inline;
+    color: #fff;
+    font-size: 20px;
+    margin-top: -2px;
+  }
+  a:hover{
+    opacity: 0.5;
+  }
+  strong{
+    font-size:21px;
+  }
+}
 .announcement_banner.open{
     display: block;
     background: indigo;
