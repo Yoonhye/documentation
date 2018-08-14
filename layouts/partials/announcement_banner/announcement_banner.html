@@ -1,7 +1,21 @@
 {{ $announce := .Site.Params.announcement_banner }}
 {{ if not (in (slice "dg" "landing-page" "tshirt" "apm" "legal" "event" "webinar" "summit") .Type) }}
-<div class="announcement_banner text-center">
-    <a href="{{.Site.Params.corp_url}}{{$announce.link}}">{{$announce.text | safeHTML }}</a>
-    <i class="icon icon-small-x pull-right"></i>
+<div class="announcement_banner text-center {{ if $.Site.Params.announcement_banner.html }} announce-html {{ end }}">
+	{{ if $.Site.Params.announcement_banner.external_link }}
+		<a href="{{$announce.external_link}}">{{$announce.text | safeHTML }}</a>
+	{{ else if $.Site.Params.announcement_banner.text }}
+		<a href="{{.Site.BaseURL}}{{$announce.link}}">{{$announce.text | safeHTML }}</a>
+	{{ else if $.Site.Params.announcement_banner.html }}
+		{{ $announce.html | safeHTML }}
+	{{ end }}
+    <i class="icon icon-thin-x pull-right"></i>
 </div>
+<script type="text/javascript">
+  var announcement_banner;
+  announcement_banner = sessionStorage.getItem('announcement_banner');
+
+  if (announcement_banner !== 'closed') {
+    document.getElementsByClassName('announcement_banner')[0].classList.add('open');
+  }
+</script>
 {{ end }}

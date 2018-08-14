@@ -1962,8 +1962,10 @@ params:
     gif: ""
   static_url: "http://localhost:1313/"
   announcement_banner:
-    text: "<strong>Logging</strong> is here!"
-    link: "blog/announcing-logs/"
+    text:
+    html: '<a href="https://www.datadoghq.com/blog/node-monitoring-apm/"><div>APM for <strong>Node.js</strong> is here!</div></a>'
+    #link: "careers/"
+    #external_link: https://www.dashcon.io/
     exclude: []
   code_languages:
     - display_name: Python
