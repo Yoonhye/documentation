@@ -575,11 +575,8 @@ build_integrations_archive() {
 
 pull_integration_archive() {
     start_step
-
-    ARTIFACT_NAME="integrations-archive-latest.tar.gz"
-    aws s3 --quiet cp s3://$(get_secret 'static_bucket')/build_artifacts/master/${ARTIFACT_NAME} ./ || (echo "artifact missing from s3." && fail_step "${FUNCNAME}")
-    tar -xzf "${ARTIFACT_NAME}"  || (echo "artifact unpack failed. sorry." && fail_step "${FUNCNAME}")
+    aws s3 --quiet cp s3://$(get_secret 'static_bucket')/build_artifacts/master/integrations-archive-latest.tar.gz ./ || (echo "artifact missing from s3." && fail_step "${FUNCNAME}")
+    tar -xzf "integrations-archive-latest.tar.gz"  || (echo "artifact unpack failed. sorry." && fail_step "${FUNCNAME}")
     echo "Done."
-
     pass_step  "${FUNCNAME}"
 }
