@@ -89,6 +89,18 @@ test_preview_links:
   only:
     - /.+?\/[a-zA-Z0-9_-]+/
 
+
+integrations_build:on-schedule:
+  <<: *base_template
+  stage: post-deploy
+  environment: "preview"
+  variables:
+    URL: ${PREVIEW_DOMAIN}
+  script:
+    - build_integrations_archive
+  only:
+    - /.+?\/[a-zA-Z0-9_-]+/
+
 # ================== live ================== #
 build_live:
   <<: *base_template
