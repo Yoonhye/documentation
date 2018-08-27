@@ -289,15 +289,15 @@ Delta value between points for a given metric
 
 ### autosmooth()
 
-Automatically removes noise while preserving the trend of the time series.
+Automatically removes noise while preserving the trend of the timeseries.
 
-The `autosmooth()` function applies a moving average with an automatically selected span. It smoothes a time series while preserving its trend. In this example, the function chooses the optimal span to smooth the time series:
+The `autosmooth()` function applies a moving average with an automatically selected span. It smoothes a timeseries while preserving its trend. In this example, the function chooses the optimal span to smooth the timeseries:
 
 {{< img src="graphing/miscellaneous/functions/autosmooth_illustration.png" alt="autosmooth illustration" responsive="true" style="width:80%;">}}
 
-When used on a `group by` query (e.g. `avg by`), the same span is applied on all the time series. If used on several metrics in the same graph, different spans could be selected to optimally smooth each one of the metric time series.
+When used on a `group by` query (e.g. `avg by`), the same span is applied on all the timeseries. If used on several metrics in the same graph, different spans could be selected to optimally smooth each one of the metric timeseries.
 
-The algorithm is inspired by the [ASAP algorithm][8] - you can read more about it in this blog post. 
+The algorithm is inspired by the [ASAP algorithm][8]-you can read more about it in [this blog post][9]. 
 
 ### ewma_3()
 
@@ -443,3 +443,4 @@ Highlight outliers series; see our [Outlier Monitor][3] page for more info.
 [6]: /developers/metrics/#metric-types
 [7]: /monitors/monitor_types/metric/
 [8]: http://futuredata.stanford.edu/asap/
+[9]: https://www.datadoghq.com/blog/auto-smoother-asap/
