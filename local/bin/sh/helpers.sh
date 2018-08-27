@@ -558,6 +558,9 @@ build_integrations_archive() {
     artifact_name="integrations-archive-latest.tar.gz"
     # add git untracked files that aren't ignored by gitignore also add modified files
     git ls-files --others --exclude-standard -m > untracked.txt
+    echo "data/integrations" >> untracked.txt
+    echo "data/service_checks" >> untracked.txt
+    echo "content/integrations" >> untracked.txt
     tar -czf "/tmp/${artifact_name}" -T untracked.txt || (echo "artifact build failed. sorry." && fail_step "${FUNCNAME}")
     echo "Deploying artifact: ${artifact_name} to s3://"$(get_secret 'static_bucket')"/build_artifacts/documentation/master/"
     aws s3 cp \
@@ -567,5 +570,16 @@ build_integrations_archive() {
         "/tmp/${artifact_name}" \
         "s3://$(get_secret 'static_bucket')/build_artifacts/master/" || fail_step "${FUNCNAME}"
     echo "Done."
+    pass_step  "${FUNCNAME}"
+}
+
+pull_integration_archive() {
+    start_step
+
+    ARTIFACT_NAME="integrations-archive-latest.tar.gz"
+    aws s3 --quiet cp s3://$(get_secret 'static_bucket')/build_artifacts/master/${ARTIFACT_NAME} ./ || (echo "artifact missing from s3." && fail_step "${FUNCNAME}")
+    tar -xzf "${ARTIFACT_NAME}"  || (echo "artifact unpack failed. sorry." && fail_step "${FUNCNAME}")
+    echo "Done."
+
     pass_step  "${FUNCNAME}"
 }
