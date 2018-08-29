@@ -1,6 +1,10 @@
 ---
 title: Logging
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/debugging"
+  tag: "Debugging"
+  text: Diagnose issues or audit trace data.
 ---
 
 Datadog's logging APIs allows for accessing active tracing identifiers which can be used to correlate APM traces with specific log events.
@@ -99,3 +103,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 Coming Soon.
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}

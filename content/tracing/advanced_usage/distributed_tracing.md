@@ -1,6 +1,10 @@
 ---
 title: Distributed Tracing
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/priority_sampling"
+  tag: "Priority Sampling"
+  text: Sample together traces between two Datadog endpoints.
 ---
 
 Distributed tracing allows you to propagate a single trace across multiple services and hosts, so you can see performance end-to-end. Linking is implemented by injecting Datadog Metadata into the request headers.
@@ -178,3 +182,7 @@ Distributed tracing is enabled by default for all supported integrations (see [C
 
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}

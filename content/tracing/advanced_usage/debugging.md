@@ -1,6 +1,10 @@
 ---
 title: Debugging
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/security"
+  tag: "Security"
+  text: Scrub sensitive information within your traces.
 ---
 
 Datadog debug settings are used to diagnose issues or audit trace data.
@@ -106,3 +110,7 @@ For more tracer settings, check out the [API documentation][nodejs api doc].
 [nodejs api doc]: https://datadog.github.io/dd-trace-js/#tracer-settings
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}

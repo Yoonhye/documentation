@@ -1,6 +1,10 @@
 ---
 title: OpenTracing
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/distributed_tracing"
+  tag: "Distributed Tracing"
+  text: Link traces across multiple hosts.
 ---
 
 OpenTracing is a vendor-neutral, cross-language standard for tracing applications. Datadog offers OpenTracing implementations for many APM tracers. For more details see [opentracing.io][opentracing website].
@@ -238,3 +242,7 @@ The following tags are available to override Datadog specific options:
 * `span.type`: The span type to be used for this span. Will fallback to `custom` if not provided.
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}

@@ -1,6 +1,10 @@
 ---
 title: Custom Tagging
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/manual_tracing"
+  tag: "Manual Tracing"
+  text: Programmatic creation of traces to send to Datadog.
 ---
 
 Custom Tagging allows adding key-value pairs to specific spans. These key-value pairs (tags) are used to correlate traces with other Datadog products and to provide more details about specific spans.
@@ -253,3 +257,7 @@ See the [API documentation][nodejs api doc] for more details.
 [nodejs api doc]: https://datadog.github.io/dd-trace-js/
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}

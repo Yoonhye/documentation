@@ -1,6 +1,10 @@
 ---
 title: Priority Sampling
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/logging"
+  tag: "Logging"
+  text: Access and inject active tracing identifiers into your application logs.
 ---
 
 Priority sampling allows traces between two Datadog endpoints to be sampled together. This prevents trace sampling from removing segments of a distributed trace (i.e. ensures completeness). Additionally, APM traces expose sampling flags to configure how specific traces are sampled.
@@ -149,3 +153,7 @@ Possible values for the sampling priority tag are:
 Coming Soon.
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}

@@ -1,6 +1,10 @@
 ---
 title: Manual Tracing
 kind: documentation
+further_reading:
+- link: "tracing/advanced_usage/open_tracing"
+  tag: "OpenTracing"
+  text: OpenTracing implementations for Datadog APM tracers
 ---
 
 Manual Tracing allows programmatic creation of traces to send to Datadog. This is useful for tracing in-house code not captured by automatic instrumentation. Before instrumenting your application, review Datadog’s [APM Terminology][apm terminology] and familiarize yourself with the core concepts of Datadog APM. 
@@ -186,3 +190,7 @@ For more information on manual instrumentation, check out the [API documentation
 
 {{% /tab %}}
 {{< /tabs >}}
+
+## Further Reading
+
+{{< partial name="whats-next/whats-next.html" >}}
